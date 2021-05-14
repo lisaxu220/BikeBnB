@@ -1,0 +1,21 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+</div>
+
+<%= render "shared/navbar" %>
+<h1>Bikes</h1>
+
+<div class="cards">
+  <% @bikes.each do |bike| %>
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png" alt="Card image cap">
+      <div class="card-body">
+        <div class="card-info">
+          <h5 class="card-title"><%= bike.name %></h5>
+          <p class="card-text">$<%= bike.price %>/day</p>
+        </div>
+        <p class="card-text"><%= bike.capacity %> riders</p>
+        <%= link_to "More info", bike_path(bike), class:"btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -29,8 +29,7 @@ def new_bike_params
   params.require(:bike).permit(:owner_id, :name, :description, :capacity, :price)
 end
 
-def set_bike
+ def set_bike
   @bike = Bike.find(params[:id])
-end
-
+ end
 end
