@@ -25,9 +25,10 @@ user = User.create(
     name: Faker::Movies::StarWars.droid,
     capacity: (1..6).to_a.sample,
     price: (1..50).to_a.sample,
-    owner: user
+    owner: user,
+    description: Faker::Movies::StarWars.quote
   )
 end
 
-puts "created #{Bike.count} bikes"
+puts "created #{Bike.count} bikes w/ description"
 

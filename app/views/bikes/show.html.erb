@@ -1,0 +1,11 @@
+<%= render "shared/navbar" %>
+<div class="container">
+  <h1><%= @bike.name %></h1>
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png" alt="" style="width: 400px; height: 400px;">
+
+  <div class="bike-info">
+    <%= @bike.description %>
+  </div>
+
+  <%= link_to "Back to list", bikes_path %>
+</div>
