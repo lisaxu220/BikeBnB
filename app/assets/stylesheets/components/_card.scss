@@ -1,0 +1,16 @@
+.cards {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card {
+  border: none;
+}
+
+.card img {
+  border-radius: 5px;
+}
+
+.card-content {
+  margin-top: 10px;
+}
