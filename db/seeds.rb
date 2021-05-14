@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Bike.destroy_all
+puts "cleaned database"
+
+Bike.create(name: "Tricycle", price: 4, capacity: 1)
+Bike.create(name: "Tandem bike", price: 15, capacity: 4)
+Bike.create(name: "Electric bike", price: 10, capacity: 1)
+
+puts "bikes created"
