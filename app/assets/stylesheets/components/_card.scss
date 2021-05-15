@@ -18,26 +18,26 @@
   margin-top: 10px;
 }
 
-.index-cards {
+.cards, .index-cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 16px;
 }
 
 @media(max-width: 992px) {
-  .index-cards {
+  .cards, .index-cards {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
 @media(max-width: 768px) {
-  .index-cards {
+  .cards, .index-cards {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 @media(max-width: 414px) {
-  .index-cards {
+  .cards, .index-cards {
     grid-template-columns: 1fr;
   }
 }
