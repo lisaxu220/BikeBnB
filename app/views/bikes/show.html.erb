@@ -1,13 +1,17 @@
 <%= render "shared/navbar" %>
 <div class="container">
   <h1><%= @bike.name %></h1>
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png" alt="" style="width: 400px; height: 400px;">
-
+  <%# remove placeholders %>
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png" alt="" style="width: 300px; height: 300px;">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png" alt="" style="width: 300px; height: 300px;">
+  <hr>
   <div class="bike-info">
-    <%= @bike.description %>;
-    rent from <%= @bike.owner.first_name %> now
+    🚴‍♂️ <%= @bike.capacity %>
+    <hr>
+    <p>Bike description</p>
+    <%= @bike.description %>
+    Rent from <%= @bike.owner.first_name %> now
   </div>
-
 
   <%= link_to "Back to list", bikes_path %>
 </div>

@@ -2,11 +2,20 @@
   justify-content: space-between;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: 40px;
 }
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  margin-top: 7px;
+  }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
+
+
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
