@@ -2,15 +2,17 @@
 <div class="container">
   <h1><%= @bike.name %></h1>
   <%# remove placeholders %>
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png" alt="" style="width: 300px; height: 300px;">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png" alt="" style="width: 300px; height: 300px;">
+  <% @bike.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
   <hr>
   <div class="bike-info">
     🚴‍♂️ <%= @bike.capacity %>
     <hr>
     <p>Bike description</p>
     <%= @bike.description %>
-    Rent from <%= @bike.owner.first_name %> now
+    Rent from <%= @bike.owner.first_name %> now for
+    $<%= @bike.price %>/day
   </div>
 
   <%= link_to "Back to list", bikes_path %>
