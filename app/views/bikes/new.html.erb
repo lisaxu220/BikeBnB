@@ -1,11 +1,14 @@
+<%= render "shared/navbar" %>
+
+<h1 class = "new-bike-header"> tell us about your available bike </h1>
+
+<div class = "new-bike-form">
 <%= simple_form_for(@bike) do |f| %>
-   <%= f.label :name %>
-   <%= f.text_field :name %>
-   <%= f.label :description %>
-   <%= f.text_field :description %>
-   <%= f.label :capacity %>
-   <%= f.number_field :capacity, in: 1..6 %>
-   <%= f.label :price %>
-   <%= f.number_field :price, in: 1..50 %>
+   <%= f.input :name, placeholder: "bike name" %>
+   <%= f.input :description, placeholder: "description" %>
+   <%= f.input :capacity, collection: 1..6 %>
+   <%= f.input :price, collection: 1..50 %>
    <%= f.submit %>
 <% end %>
+</div>
+
