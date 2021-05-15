@@ -1,0 +1,24 @@
+.bike-specs {
+  display: flex;
+  list-style-type: none;
+  li {
+    margin: 0 16px;
+  }
+}
+
+form {
+  width: 300px;
+  h4 {
+    margin-top: 16px;
+    margin-bottom: 0;
+  }
+  p {
+    margin: 8px;
+  }
+}
+
+.bike-container {
+  display: flex;
+  justify-content: space-between;
+}
+

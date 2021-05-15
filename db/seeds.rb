@@ -20,7 +20,6 @@ user = User.create(
   password: "123456"
 )
 
-# create a bike
 12.times do
   file = URI.open('https://source.unsplash.com/user/kbobike')
     bike = Bike.create(
@@ -28,7 +27,7 @@ user = User.create(
       capacity: (1..6).to_a.sample,
       price: (1..50).to_a.sample,
       owner: user,
-      description: Faker::Movies::StarWars.quote
+      description: Faker::Lorem.paragraph
     )
   bike.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 end
