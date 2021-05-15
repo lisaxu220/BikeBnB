@@ -26,7 +26,7 @@ end
 private
 
 def new_bike_params
-  params.require(:bike).permit(:owner_id, :name, :description, :capacity, :price)
+  params.require(:bike).permit(:owner_id, :name, :description, :capacity, :price, photos: [])
 end
 
  def set_bike
