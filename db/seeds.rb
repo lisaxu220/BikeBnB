@@ -26,7 +26,7 @@ user = User.create(
     capacity: (1..6).to_a.sample,
     price: (1..50).to_a.sample,
     owner: user,
-    description: Faker::Movies::StarWars.quote
+    description: Faker::Lorem.paragraph
   )
 end
 

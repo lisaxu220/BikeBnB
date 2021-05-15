@@ -1,19 +1,21 @@
 <%= render "shared/navbar" %>
 <div class="container">
   <h1><%= @bike.name %></h1>
-  <%# remove placeholders %>
   <% @bike.photos.each do |photo| %>
     <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
   <% end %>
   <hr>
+  <div class="bike-container">
   <div class="bike-info">
-    🚴‍♂️ <%= @bike.capacity %>
-    <hr>
-    <p>Bike description</p>
-    <%= @bike.description %>
-    Rent from <%= @bike.owner.first_name %> now for
-    $<%= @bike.price %>/day
+    <ul class="bike-specs">
+      <li>🚴‍♂️ <%= @bike.capacity %> </li>
+      <li> ⚙️ 2 </li>
+    </ul>
+    <h5>Bike description</h5>
+    <p><%= @bike.description %></p>
   </div>
-
+  <%= render "form" %>
+  </div>
+  
   <%= link_to "Back to list", bikes_path %>
 </div>
