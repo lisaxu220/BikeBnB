@@ -8,6 +8,7 @@
    <%= f.input :description, placeholder: "description" %>
    <%= f.input :capacity, collection: 1..6 %>
    <%= f.input :price, collection: 1..50 %>
+   <%= f.input :photos, as: :file, input_html: { multiple: true} %>
    <%= f.submit %>
 <% end %>
 </div>
