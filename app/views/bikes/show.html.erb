@@ -4,8 +4,10 @@
   <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png" alt="" style="width: 400px; height: 400px;">
 
   <div class="bike-info">
-    <%= @bike.description %>
+    <%= @bike.description %>;
+    rent from <%= @bike.owner.first_name %> now
   </div>
+
 
   <%= link_to "Back to list", bikes_path %>
 </div>
