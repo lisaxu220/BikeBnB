@@ -9,15 +9,15 @@
   <div class="index-cards">
     <% @bikes.each do |bike| %>
       <div class="card" style="width: 250px;">
-        <img class="card-img-top" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png" alt="Card image cap">
-        <div class="card-body">
-          <div class="card-info">
-            <h4 class="card-title"><%= bike.name %></h4>
-            <p class="card-text">$<%= bike.price %>/day</p>
+        <%= cl_image_tag bike.photos.first.key, crop: :fill %>
+          <div class="card-body">
+            <div class="card-info">
+              <h4 class="card-title"><%= bike.name %></h4>
+              <p class="card-text">$<%= bike.price %>/day</p>
+            </div>
+            <p class="card-text"><%= bike.capacity %> riders</p>
+            <%= link_to "More info", bike_path(bike), class:"btn btn-dark" %>
           </div>
-          <p class="card-text"><%= bike.capacity %> riders</p>
-          <%= link_to "More info", bike_path(bike), class:"btn btn-dark" %>
-        </div>
       </div>
     <% end %>
   </div>

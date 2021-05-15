@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require "open-uri"
 
 # create a user
 User.destroy_all
@@ -20,14 +21,16 @@ user = User.create(
 )
 
 # create a bike
-4.times do
-  Bike.create(
-    name: Faker::Movies::StarWars.droid,
-    capacity: (1..6).to_a.sample,
-    price: (1..50).to_a.sample,
-    owner: user,
-    description: Faker::Movies::StarWars.quote
-  )
+12.times do
+  file = URI.open('https://source.unsplash.com/user/kbobike')
+    bike = Bike.create(
+      name: Faker::Movies::StarWars.droid,
+      capacity: (1..6).to_a.sample,
+      price: (1..50).to_a.sample,
+      owner: user,
+      description: Faker::Movies::StarWars.quote
+    )
+  bike.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 end
 
 puts "created #{Bike.count} bikes w/ description"
