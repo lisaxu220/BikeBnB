@@ -1,14 +1,14 @@
 .cards {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin: 20px;
 }
 
 .home-card {
   border: none;
   img {
-    width: 200px;
-    height: 140px;
+    width: 230px;
+    height: 150px;
     object-fit: cover;
     border-radius: 5px;
   }
