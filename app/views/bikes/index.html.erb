@@ -9,13 +9,13 @@
   <div class="index-cards">
     <% @bikes.each do |bike| %>
       <div class="card" style="width: 250px;">
-        <%= cl_image_tag bike.photos.first.key, crop: :fill %>
+        <%= cl_image_tag bike.photos.first.key, height: 200, width: 250, crop: :fill %>
           <div class="card-body">
             <div class="card-info">
               <h4 class="card-title"><%= bike.name %></h4>
               <p class="card-text">$<%= bike.price %>/day</p>
             </div>
-            <p class="card-text">X⭐</p>
+            <p class="card-text"><%="⭐"*rand(1..5)%></p>
             <p class="card-text"><%= bike.capacity %> rider(s)</p>
             <%= link_to "More info", bike_path(bike), class:"btn btn-dark" %>
           </div>
