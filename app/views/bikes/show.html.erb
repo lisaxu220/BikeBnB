@@ -12,8 +12,9 @@
     <h5>Bike description</h5>
     <p><%= @bike.description %></p>
   </div>
-  <%= render "form" %>
   </div>
-  
+
   <%= link_to "Back to list", bikes_path %>
+  <%= link_to "Book now!", new_bike_booking_path(@bike) %>
+
 </div>
