@@ -17,7 +17,7 @@ def create
   @bike = Bike.new(new_bike_params)
   @bike.owner = current_user
   if @bike.save
-    redirect_to bikes_path
+    redirect_to bike_path(@bike)
   else
     render :new
   end

@@ -8,12 +8,12 @@
   </ol>
 
   <div class="carousel-inner">
-    <div class="carousel-item active", style="width: 400px; height: 400px;">
-      <%= cl_image_tag @bike.photos.first.key, class:"bike-photo" %>
+    <div class="carousel-item active">
+      <%= cl_image_tag(@bike.photos.first.key, :quality=>70, crop: :scale, class: "bike-photo d-block w-100") %>
     </div>
     <% @bike.photos[1..-1].each do |photo| %>
-      <div class="carousel-item", style="width: 400px; height: 400px;">
-      <%= cl_image_tag photo.key, class:"bike-photo" %>    
+      <div class="carousel-item">
+      <%= cl_image_tag(photo.key, :quality=>70, crop: :scale, class: "bike-photo d-block w-100") %>    
       </div>
     <% end %>
   </div>

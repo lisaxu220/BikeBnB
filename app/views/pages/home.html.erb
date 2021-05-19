@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_path "bike_banner.jpeg" %>');">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path("bike_banner_ognuhx") %>');">
   <div class="container">
     <h1>Why drive when you can <strong>bike</strong>!</h1>
     <p>Find the perfect ride for you and your friends.</p>
@@ -10,27 +10,27 @@
 <div class="container">
   <div class="cards">
     <div class="home-card home-borderless">
-      <img src="<%= image_path("bike_card.jpeg") %>" alt="bike">
-      <p class="card-content">Cool bikes</p>
+      <img src="<%= cl_image_path("im-117726_z4hs4g") %>" alt="bike">
+      <p class="card-content">For one</p>
     </div>
 
     <div class="home-card home-borderless">
-      <img src="<%= image_path("bike_card.jpeg") %>" alt="bike">
-      <p class="card-content">Stylish bikes</p>
+      <img src="<%= cl_image_path("tandem-tree-wheeler_o4hbqs") %>" alt="bike">
+      <p class="card-content">For two</p>
     </div>
 
     <div class="home-card home-borderless">
-      <img src="<%= image_path("bike_card.jpeg") %>" alt="bike">
-      <p class="card-content">Smol bikes</p>
+      <img src="<%= cl_image_path("longbike11_cmv5gs") %>" alt="bike">
+      <p class="card-content">For three</p>
     </div>
 
     <div class="home-card home-borderless">
-      <img src="<%= image_path("bike_card.jpeg") %>" alt="bike">
-      <p class="card-content">Tol bikes</p>
+      <img src="<%= cl_image_path("main-qimg-364049f9b85bf8d6e22dbb89f410804e_o3v8ic") %>" alt="bike">
+      <p class="card-content">For four or more</p>
     </div>
   </div>
 
-  <div class="small-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.terracastproducts.com/wp-content/uploads/2018/12/The-Problem-with-Narrow-Bike-Lanes.jpg);">
+  <div class="small-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path("home-small-banner") %>');">
     <div class="small-banner-info">
       <p>Biking. All day, every day. Wow.</p>
       <%= link_to "See all bikes", bikes_path, class:"btn btn-dark" %>
