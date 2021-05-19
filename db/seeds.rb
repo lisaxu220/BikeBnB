@@ -33,4 +33,3 @@ user = User.create(
 end
 
 puts "created #{Bike.count} bikes w/ description"
-

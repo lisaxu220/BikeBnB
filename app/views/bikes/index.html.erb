@@ -3,13 +3,12 @@
 
 <%= render "shared/navbar" %>
 
-
 <div class="container">
   <h1>Bikes</h1>
   <div class="index-cards">
     <% @bikes.each do |bike| %>
       <div class="card" style="width: 250px;">
-        <%= cl_image_tag bike.photos.first.key, height: 200, width: 250, crop: :fill %>
+        <%= cl_image_tag bike.photos.first.key, height: 200, width: 250, crop: :fill, class: "card-img-top" %>
           <div class="card-body">
             <div class="card-info">
               <h4 class="card-title"><%= bike.name %></h4>

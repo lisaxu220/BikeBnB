@@ -4,10 +4,10 @@
 
 <div class = "new-bike-form">
 <%= simple_form_for(@bike) do |f| %>
-   <%= f.input :name, placeholder: "bike name" %>
-   <%= f.input :description, placeholder: "description" %>
-   <%= f.input :capacity, collection: 1..6 %>
-   <%= f.input :price, collection: 1..50 %>
+   <%= f.input :name, placeholder: "Bike name" %>
+   <%= f.input :description, placeholder: "Bike description" %>
+   <%= f.input :capacity, placeholder: "# of riders" %>
+   <%= f.input :price, placeholder: "$ per day" %>
    <%= f.input :photos, as: :file, input_html: { multiple: true} %>
    <%= f.submit %>
 <% end %>
