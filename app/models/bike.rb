@@ -8,4 +8,5 @@ class Bike < ApplicationRecord
     against: [ :name],
     using: {
       tsearch: { prefix: true }
+    }
 end
