@@ -1,7 +1,17 @@
+<%= render "shared/navbar" %>
 
 
-<%= simple_form_for([@bike,@booking]) do |f| %>
-   <%= f.input :start_time, placeholder: "start time" %>
-   <%= f.input :end_time, placeholder: "end time" %>
-   <%= f.submit %>
-<% end %>
+
+<h1 class = "new-booking-header"> Reserve your wheels </h1>
+
+
+<div class = "new-booking-form">
+  <%= simple_form_for([@bike,@booking]) do |f| %>
+     <%= f.input :start_time, as: :date, label: "start date", order: [:month, :day, :year] %>
+     <%= f.input :end_time, as: :date, label: "end date", order: [:month, :day, :year] %>
+     <%= f.submit %>
+  <% end %>
+</div>
+
+
+
