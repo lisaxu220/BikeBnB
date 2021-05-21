@@ -1,0 +1,9 @@
+<p> <% @booking.each do |booking|  %>
+  <%= booking.start_time %>
+  <%= booking.end_time %>
+  <%= booking.renter.first_name %>
+  <%= booking.renter_id %>
+</p>
+<% end %>
+
+<%= link_to "back to bikes", bikes_path %>
