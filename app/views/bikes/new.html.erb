@@ -1,6 +1,6 @@
 <%= render "shared/navbar" %>
 
-<h1 class = "new-bike-header"> tell us about your available bike </h1>
+<h2 class = "new-bike-header"> Tell us about your bike! </h2>
 
 <div class = "new-bike-form">
 <%= simple_form_for(@bike) do |f| %>
@@ -8,12 +8,8 @@
    <%= f.input :description, placeholder: "Bike description" %>
    <%= f.input :capacity, placeholder: "# of riders" %>
    <%= f.input :price, placeholder: "$ per day" %>
-   <%= f.input :photos, as: :file, input_html: { multiple: true} %>
-   <%= f.submit %>
+   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+   <%= f.button :submit, class: "btn btn-dark"  %>
 <% end %>
 </div>
 <%= link_to "See all bikes", bikes_path %>
-
-
-
-
