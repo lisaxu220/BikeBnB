@@ -3,10 +3,12 @@ skip_before_action :authenticate_user!, only: :index
 before_action :set_bike, only: [:show]
 
 def index
+  # @bikes = Bike.search_by_name(params[:query])
   @bikes = Bike.all
 end
 
 def show
+  @booking = Booking.new
 end
 
 def new

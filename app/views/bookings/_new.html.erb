@@ -1,0 +1,10 @@
+<div class = "new-booking-form border">
+  <%= simple_form_for [@bike, @booking] do |f| %>
+     <%= f.input :start_time, as: :date, html5: true, label: "Start date", order: [:month, :day, :year] %>
+     <%= f.input :end_time, as: :date, html5: true, label: "End date", order: [:month, :day, :year] %>
+     <%= f.button :submit %>
+  <% end %>
+  <div class="price">
+  <p>Total ($)</p>
+  </div>
+</div>
