@@ -1,9 +1,16 @@
-<p> <% @booking.each do |booking|  %>
-  <%= booking.start_time %>
-  <%= booking.end_time %>
-  <%= booking.renter.first_name %>
-  <%= booking.renter_id %>
-</p>
-<% end %>
+<%= render "shared/navbar" %>
+
+<div class="index-cards">
+  <% @booking.each do |booking|  %>
+  <div class="card">
+   <p class="card-text">begins on: <%= booking.start_time.strftime("%B %d, %Y") %></p>
+   <p class="card-text">ends on: <%= booking.end_time.strftime("%B %d, %Y") %></p>
+   <p class="card-text">renting bike: <%= booking.bike.name %></p>
+   <p class="card-text">for: <%= booking.bike.capacity %> riders </p>
+   <p class="card-text">from: <%= booking.bike.owner.first_name %></p>
+   </div>
+  <% end %>
+</div>
+
 
 <%= link_to "back to bikes", bikes_path %>
