@@ -1,6 +1,10 @@
 class BookingsController < ApplicationController
   skip_before_action :authenticate_user!
 
+  def index
+    @booking = Booking.where(renter: current_user)
+  end
+
   def new
     @booking = Booking.new
     @bike = Bike.find(params[:bike_id])
