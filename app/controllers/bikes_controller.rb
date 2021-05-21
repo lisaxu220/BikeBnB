@@ -3,8 +3,11 @@ skip_before_action :authenticate_user!, only: :index
 before_action :set_bike, only: [:show]
 
 def index
-  # @bikes = Bike.search_by_name(params[:query])
-  @bikes = Bike.all
+  if params[:query].present?
+    @bikes = Bike.search_by_name(params[:query])
+  else
+    @bikes = Bike.all
+  end
 end
 
 def show
