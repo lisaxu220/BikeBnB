@@ -1,10 +1,17 @@
 .bike-specs {
   display: flex;
   list-style-type: none;
+  font-size: 25px;
+  color: #3f3e3e;
   li {
     margin: 0 16px;
   }
 }
+
+ul.bike-specs {
+  padding: 0;
+}
+
 
 form {
   width: 300px;
@@ -21,4 +28,5 @@ form {
   display: flex;
   justify-content: space-between;
 }
+
 

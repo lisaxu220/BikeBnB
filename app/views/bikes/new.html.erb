@@ -4,12 +4,11 @@
 
 <div class = "new-bike-form">
 <%= simple_form_for(@bike) do |f| %>
-   <%= f.input :name, placeholder: "Bike name" %>
-   <%= f.input :description, placeholder: "Bike description" %>
-   <%= f.input :capacity, placeholder: "# of riders" %>
-   <%= f.input :price, placeholder: "$ per day" %>
+   <%= f.input :name, placeholder: "Ex. Cannondale mountain bike", label: "What's the name of your bike?", required: false %>
+   <%= f.input :description, placeholder: "Tell us why your bike is awesome!", required: false %>
+   <%= f.input :capacity, placeholder: "Ex. 2", label: "How many riders?", required: false %>
+   <%= f.input :price, placeholder: "Ex. 15", label: "How much does it cost ($) per day ?", required: false %>
    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
    <%= f.button :submit, class: "btn btn-dark"  %>
 <% end %>
 </div>
-<%= link_to "See all bikes", bikes_path %>

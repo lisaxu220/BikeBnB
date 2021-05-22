@@ -15,6 +15,7 @@
 @import "bikes/index";
 @import "bikes/show";
 
+$font-color: #222222;
 
 body {
   background-color: white;
@@ -22,17 +23,21 @@ body {
 
 h1, h2, h3, h4 {
   font-family: 'Roboto', sans-serif;
-  color: rgb(32, 32, 32);
+  color: $font-color;
+}
+
+h4 {
+  font-size: 24px;
 }
 
 p {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
-  color: rgb(32, 32, 32);
+  color: $font-color;
 }
 
 .link {
-  color: black;
+  color: $font-color;
   &:hover {
     text-decoration: none;
     color: rgb(51, 49, 49);
