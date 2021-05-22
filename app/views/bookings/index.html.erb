@@ -1,17 +1,21 @@
 <%= render "shared/navbar" %>
 
-<div class="index-cards" padding-top: 5px>
+<div class="container">
   <% @booking.each do |booking|  %>
-  <div class="card" style="width: 300px;">
-  <div class="card-content">
-  <%= cl_image_tag booking.bike.photos.first.key, height: 200, width: 250, crop: :fill, class: "card-img-top" %>
-   <p class="card-text">Your booking, Booking # <%= booking.id %>, will begin on <%= booking.start_time.strftime("%B %d, %Y") %> and end on <%= booking.end_time.strftime("%B %d, %Y") %>.</p>
-   <p class="card-text">You'll be renting bike <%= booking.bike.name %>, from <%= booking.bike.owner.first_name %>, which can have up to <%= booking.bike.capacity %> riders.</p>
-   <p class="card-text">Total price: <%= number_to_currency(((booking.end_time - booking.start_time) / 86400) * booking.bike.price) %></p>
-    <%= link_to "view bike", bike_path(booking.bike), class:"btn btn-dark" %>
-    <%= link_to "back to all bikes", bikes_path, class:"btn btn-light" %>
-   </div>
-   </div>
+    <div class="card-product">
+      <%= cl_image_tag booking.bike.photos.first.key, height: 200, width: 250, crop: :fill%>
+        <div class="card-product-infos">
+          <h2> Booking # <%= booking.id %> </h2>
+       <p>Your booking will begin on <%= booking.start_time.strftime("%B %d, %Y") %> and end on <%= booking.end_time.strftime("%B %d, %Y") %>.</p>
+       <p>You'll be renting <%= booking.bike.name %>, from <%= booking.bike.owner.first_name %>, which can have up to <%= booking.bike.capacity %> riders.</p>
+       <p>Total price: <%= number_to_currency(((booking.end_time - booking.start_time) / 86400) * booking.bike.price) %></p>
+
+        <div class="link-container">
+          <%= link_to "view bike", bike_path(booking.bike), class:"btn btn-outline-dark btn-sm" %>
+          <%= link_to "view all bikes", bikes_path, class:"btn btn-outline-dark btn-sm" %>
+        </div>
+        </div>
+    </div>
   <% end %>
 </div>
 
