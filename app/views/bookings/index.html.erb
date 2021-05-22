@@ -8,6 +8,7 @@
    <p class="card-text">renting bike: <%= booking.bike.name %></p>
    <p class="card-text">for: <%= booking.bike.capacity %> riders </p>
    <p class="card-text">from: <%= booking.bike.owner.first_name %></p>
+   <p class="card-text">total price: <%= number_to_currency(((booking.end_time - booking.start_time) / 86400) * booking.bike.price) %></p>
    </div>
   <% end %>
 </div>
