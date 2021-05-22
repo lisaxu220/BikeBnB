@@ -14,9 +14,11 @@
               <h4 class="card-title"><%= bike.name %></h4>
               <p class="card-text">$<%= bike.price %>/day</p>
             </div>
-            <p class="card-text"><%="⭐"*rand(1..5)%></p>
-            <p class="card-text"><%= bike.capacity %> rider(s)</p>
-            <%= link_to "More info", bike_path(bike), class:"btn btn-dark" %>
+            <p class="card-text"><%="★"*rand(1..5)%></p>
+            <div class="card-info">
+            <p class="card-text"> <%= pluralize bike.capacity, "rider" %> </p>
+            <%= link_to "More info", bike_path(bike), class:"info btn btn-dark" %>
+            </div>
           </div>
       </div>
     <% end %>

@@ -20,13 +20,13 @@ user = User.create(
   password: "123456"
 )
 
-12.times do
-  file = URI.open('https://source.unsplash.com/user/kbobike')
+20.times do
+  file = URI.open('https://source.unsplash.com/featured/?{bike},{bicycle}')
     bike = Bike.create(
       name: Faker::Movies::StarWars.droid,
       capacity: (1..6).to_a.sample,
       price: (1..50).to_a.sample,
-      owner: user,
+      owner_id: user.id,
       description: Faker::Lorem.paragraph
     )
   bike.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
