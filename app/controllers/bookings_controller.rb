@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
   skip_before_action :authenticate_user!
 
   def index
-    @booking = Booking.where(renter: current_user)
+    @booking = Booking.where(renter: current_user).order(created_at: :desc)
   end
 
   def new

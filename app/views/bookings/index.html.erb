@@ -1,19 +1,19 @@
 <%= render "shared/navbar" %>
 
-<div class="container">
+<div class="container booking">
   <% @booking.each do |booking|  %>
     <div class="card-product">
       <%= cl_image_tag booking.bike.photos.first.key, height: 200, width: 250, crop: :fill%>
         <div class="card-product-infos">
           <h2> Booking # <%= booking.id %> </h2>
-       <p>Your booking will begin on <%= booking.start_time.strftime("%B %d, %Y") %> and end on <%= booking.end_time.strftime("%B %d, %Y") %>.</p>
-       <p>You'll be renting <%= booking.bike.name %>, from <%= booking.bike.owner.first_name %>, which can have up to <%= booking.bike.capacity %> riders.</p>
-       <p>Total price: <%= number_to_currency(((booking.end_time - booking.start_time) / 86400) * booking.bike.price) %></p>
+          <p>Your booking will begin on <%= booking.start_time.strftime("%B %d, %Y") %> and end on <%= booking.end_time.strftime("%B %d, %Y") %>.</p>
+          <p>You'll be renting <%= booking.bike.name %>, from <%= booking.bike.owner.first_name %>, which can have up to <%= booking.bike.capacity %> riders.</p>
+          <p>Total price: <%= number_to_currency(((booking.end_time - booking.start_time) / 86400) * booking.bike.price) %></p>
 
-        <div class="link-container">
-          <%= link_to "view bike", bike_path(booking.bike), class:"btn btn-outline-dark btn-sm" %>
-          <%= link_to "view all bikes", bikes_path, class:"btn btn-outline-dark btn-sm" %>
-        </div>
+          <div class="link-container">
+            <%= link_to "view bike", bike_path(booking.bike), class:"btn btn-outline-dark btn-sm" %>
+            <%= link_to "view all bikes", bikes_path, class:"btn btn-outline-dark btn-sm" %>
+          </div>
         </div>
     </div>
   <% end %>
