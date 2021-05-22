@@ -3,10 +3,14 @@ skip_before_action :authenticate_user!, only: :index
 before_action :set_bike, only: [:show]
 
 def index
+  @bikes = Bike.all
+  if params[:capacity].present? 
+  @bikes = Bike.where( capacity: params[:capacity] )
+  end
   if params[:query].present?
-    @bikes = Bike.search_by_name(params[:query])
+    @bikes = @bikes.search_by_name_and_capacity(params[:query])
   else
-    @bikes = Bike.all
+    @bikes = @bikes.all
   end
 end
 
