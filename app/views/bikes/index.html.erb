@@ -8,19 +8,21 @@
   <div class="index-cards">
     <% @bikes.each do |bike| %>
       <div class="card" style="width: 250px;">
-        <%= cl_image_tag bike.photos.first.key, height: 200, width: 250, crop: :fill, class: "card-img-top" %>
-          <div class="card-body">
-            <div class="card-info">
-              <h4 class="card-title"><%= bike.name %></h4>
-              <p class="card-text">$<%= bike.price %>/day</p>
-            </div>
-            <p class="card-text"><%="★"*rand(1..5)%></p>
-            <div class="card-info">
-            <p class="card-text"> <%= pluralize bike.capacity, "rider" %> </p>
-            <%= link_to "More info", bike_path(bike), class:"info btn btn-dark" %>
+        <%= link_to bike_path(bike), class:"link" do %>
+          <%= cl_image_tag bike.photos.first.key, height: 200, width: 250, crop: :fill, class: "card-img-top" %>
+            <div class="card-body">
+              <div class="card-info">
+                <h4 class="card-title"><%= bike.name %></h4>
+                <p class="card-text">$<%= bike.price %>/day</p>
+              </div>
+              <p class="card-text"><%="★"*rand(1..5)%></p>
+              <div class="card-info">
+              <p class="card-text"> <%= pluralize bike.capacity, "rider" %> </p>
+              <%= link_to "More info", bike_path(bike), class:"info btn btn-dark" %>
+              </div>
             </div>
           </div>
-      </div>
+        <% end %>
     <% end %>
   </div>
 </div>
