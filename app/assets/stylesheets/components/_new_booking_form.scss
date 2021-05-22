@@ -1,9 +1,12 @@
 .new-booking-form {
-  // display: flex;
-  // justify-content: space-evenly;
-  padding: 10px;
+  padding: 35px 24px;
   margin: 0 auto;
   font-size: 20px;
   border-style: solid 1px;
+}
+
+input.btn-block[type="submit"], input.btn-block[type="reset"], input.btn-block[type="button"] {
+  margin: 4.5px;
+  width: 291.02px;
 }
 

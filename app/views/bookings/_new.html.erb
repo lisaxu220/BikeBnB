@@ -1,12 +1,8 @@
 <div class = "new-booking-form border">
-  <h4><strong>Book bike</strong></h4>
+  <h4><strong>Reserve bike</strong></h4>
   <%= simple_form_for [@bike, @booking] do |f| %>
      <%= f.input :start_time, as: :date, html5: true, label: "Start date", order: [:month, :day, :year] %>
      <%= f.input :end_time, as: :date, html5: true, label: "End date", order: [:month, :day, :year] %>
-     <%= f.button :submit, class: "btn btn-dark btn-block" %>
+     <%= f.button :submit, "Book", class: "booking btn btn-dark btn-block" %>
   <% end %>
-  <div class="price">
-  <p>Total ($)</p>
-  <%# <p><%= ((@booking.end_time - @booking.start_time) / 86400.0) * @bike.price %> 
-  </div>
 </div>

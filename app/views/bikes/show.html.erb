@@ -2,15 +2,18 @@
 <div class="container">
   <h1><%= @bike.name %></h1>
   <%= render "carousel" %>
-  <hr>
+  <br>
   <div class="bike-container">
   <div class="bike-info">
     <ul class="bike-specs">
-      <li>🚴‍♂️ <%= @bike.capacity %> </li>
-      <li> $<%= @bike.price %></li>
+      <li><i class="fas fa-biking"></i> <%= @bike.capacity %> </li>
+      <li> <i class="fas fa-dollar-sign"></i> <%= @bike.price %></li>
     </ul>
-    <h5>Bike description</h5>
+    <br>
+    <div class="bike-desc">
+    <h3>Bike description</h3>
     <p><%= @bike.description %></p>
+    </div>
   </div>
 
   <div class="booking-form">
@@ -18,5 +21,5 @@
   </div>
   </div>
 
-  <%= link_to "Back to list", bikes_path, class: "link" %>
+  <%= link_to "Back to list", bikes_path, class: "btn btn-dark" %>
 </div>
