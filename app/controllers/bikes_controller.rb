@@ -3,7 +3,7 @@ skip_before_action :authenticate_user!, only: :index
 before_action :set_bike, only: [:show]
 
 def index
-  @bikes = Bike.all
+  @bikes = Bike.all.order(created_at: :desc)
   if params[:capacity].present? 
   @bikes = Bike.where( capacity: params[:capacity] )
   end
